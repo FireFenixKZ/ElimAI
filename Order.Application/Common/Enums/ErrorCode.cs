@@ -1,0 +1,13 @@
+namespace Order.Application.Common.Enums;
+
+public enum ErrorCode
+{
+	NONE,
+	UNKNOWN_ERROR,
+	SYSTEM_ERROR,
+	OPERATION_ERROR,
+	SERIALIZATION_ERROR,
+	CONNECTION_ERROR,
+	SERVICE_ERROR,
+	RETRY_ERROR,
+}

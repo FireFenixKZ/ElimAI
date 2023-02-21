@@ -1,4 +1,4 @@
-﻿namespace Customer.Application
+﻿namespace Order.Infrastructure
 {
     public class Class1
     {

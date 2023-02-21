@@ -1,3 +1,6 @@
+using Order.API.Configs.Middleware;
+using Order.API.Configs.Swagger;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -20,6 +23,12 @@ app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
+app.UseApiVersioning();
+app.UseCustomizedSwagger();
+app.UseHttpsRedirection();
+app.UseMiddleware<RequestGuidMiddleware>();
+app.UseMiddleware<LoggingMiddleware>();
+app.UseMiddleware<ExceptionHandleMiddleware>();
 app.MapControllers();
 
 app.Run();
