@@ -1,6 +1,6 @@
 using Newtonsoft.Json;
 
-namespace CTeleport.DistanceCalculator.Core.Common.Extensions;
+namespace Order.Application.Common.Extensions;
 
 public static class TypeConvertExtensions
 {

@@ -1,4 +1,4 @@
-namespace Order.Application.Core.Common.Options;
+namespace Order.Application.Common.Options;
 
 public class RetryPolicyOptions
 {

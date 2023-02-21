@@ -1,4 +1,4 @@
-namespace CTeleport.DistanceCalculator.Core.Common.Exceptions;
+namespace Order.Application.Common.Exceptions;
 
 /// <summary>
 /// presents exceptions occured on infrastructure level
