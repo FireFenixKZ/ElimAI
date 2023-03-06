@@ -1,4 +1,5 @@
-﻿using Catalog.Domain.Entity;
+﻿using Catalog.Application.Contracts;
+using Catalog.Domain.Entity;
 using Catalog.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 

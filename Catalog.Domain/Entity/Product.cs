@@ -12,7 +12,7 @@ namespace Catalog.Domain.Entity
         public string Title { get; set; } = string.Empty;
         public string? Description { get; set; }
         public string ImageUrl { get; set; } = string.Empty;
-        //public List<Image> Images { get; set; } = new List<Image>();
+        public List<Image> Images { get; set; } = new List<Image>();
         [ForeignKey("CategoryId")]
         public int CategoryId { get; set; }
         public Category Category { get; set; }
@@ -25,7 +25,7 @@ namespace Catalog.Domain.Entity
         [NotMapped]
         public bool IsNew { get; set; } = false;
         public int ShopId { get; set; }
-        //public Shop Shop { get; set; }
+        public Shop Shop { get; set; }
         public string? Slug { get; set; }
         public bool RefundAble { get; set; }
         public string? ThumbNail { get; set; }

@@ -1,15 +1,23 @@
-﻿using Catalog.Application.DTO;
+﻿using AutoMapper;
+using Catalog.Application.Contracts;
+using Catalog.Application.DTO;
 using KDS.Primitives.FluentResult;
 using MediatR;
 
 namespace Catalog.Application.Features.GetCategoryListQuery
 {
-    public class GetCategoryListQueryHandler : IRequestHandler<GetCategoryListQuery, Result<CategoryDTO>>
+    public class GetCategoryListQueryHandler : IRequestHandler<GetCategoryListQuery, Result<List<CategoryDTO>>>
     {
-        public async Task<Result<CategoryDTO>> Handle(GetCategoryListQuery request, CancellationToken cancellationToken)
+        private readonly ICategoryService _categoryService;
+        private readonly IMapper _mapper;
+        public GetCategoryListQueryHandler(ICategoryService categoryService, IMapper mapper)
         {
-            await Task.CompletedTask;
-            return Result.Success(new CategoryDTO());
+            _categoryService = categoryService;
+            _mapper = mapper;
+        }
+        public async Task<Result<List<CategoryDTO>>> Handle(GetCategoryListQuery request, CancellationToken cancellationToken)
+        {
+            return Result.Success(_mapper.Map<List<CategoryDTO>>(await _categoryService.GetCategories()));
         }
     }
 }

@@ -5,6 +5,10 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Features\GetProductListByCategoryQuery\GetProductListByCategoryQuery" />
+  </ItemGroup>
 	<ItemGroup>
 		<PackageReference Include="KDS.Primitives.FluentApiResponse" Version="1.0.0" />
 		<PackageReference Include="KDS.Primitives.FluentResult" Version="1.0.0" />
@@ -18,6 +22,6 @@
 		<PackageReference Include="Serilog.AspNetCore" Version="6.1.0" />
 	</ItemGroup>
 	<ItemGroup>
-	  <Folder Include="Contracts\" />
+	  <ProjectReference Include="..\Catalog.Domain\Catalog.Domain.csproj" />
 	</ItemGroup>
 </Project>
